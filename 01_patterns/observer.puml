@@ -1,0 +1,19 @@
+@startuml
+interface Observer {
+    + update(message: String)
+}
+
+class WeatherStation {
+    - _observers: List<Observer>
+    + add_observer(observer: Observer)
+    + remove_observer(observer: Observer)
+    + notify_observers(message: String)
+}
+
+class Display {
+    + update(message: String)
+}
+
+Observer <|.. Display
+WeatherStation "1" *--> "0..*" Observer
+@enduml

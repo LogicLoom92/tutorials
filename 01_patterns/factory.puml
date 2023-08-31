@@ -1,0 +1,21 @@
+@startuml
+class Shape {
+    + draw(): String
+}
+
+class Circle {
+    + draw(): String
+}
+
+class Square {
+    + draw(): String
+}
+
+class ShapeFactory {
+    + create_shape(shape_type: String): Shape
+}
+
+Shape <|-- Circle
+Shape <|-- Square
+ShapeFactory ..> Shape
+@enduml
